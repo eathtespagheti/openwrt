@@ -152,7 +152,12 @@
 	status = "okay";
 	econet,bmt;
 	econet,bbt-table-size = <250>;
-	econet,assert-reserve-size = <167>;
+	/*
+	 * Bring-up check only: the driver warns this must not be used in
+	 * production because the reserve size grows when a reserve block
+	 * wears out, which would then abort the NAND probe.
+	 * econet,assert-reserve-size = <167>;
+	 */
 
 	partitions {
 		compatible = "fixed-partitions";
