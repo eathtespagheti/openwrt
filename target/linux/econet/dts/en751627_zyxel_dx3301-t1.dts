@@ -73,24 +73,27 @@
 			default-state = "off";
 		};
 
-		/* DX3301-specific; GPIOs are unverified on the T1. */
-		led_wps_green: led-6 {
-			color = <LED_COLOR_ID_GREEN>;
-			function = LED_FUNCTION_WPS;
+		/*
+		 * Panel map verified on hardware 2026-11-22. There is no DSL LED
+		 * and no separate WAN LED on this FTTH variant.
+		 */
+		led_wlan24_amber: led-9 {
+			color = <LED_COLOR_ID_AMBER>;
+			function = "wlan2g";
 			gpios = <&gpio0 23 GPIO_ACTIVE_LOW>;
 			default-state = "off";
 		};
 
-		led_wps_amber: led-9 {
+		led_wlan5_amber: led-12 {
 			color = <LED_COLOR_ID_AMBER>;
-			function = LED_FUNCTION_WPS;
+			function = "wlan5g";
 			gpios = <&gpio0 22 GPIO_ACTIVE_LOW>;
 			default-state = "off";
 		};
 
-		led_dsl: led-10 {
+		led_wps: led-6 {
 			color = <LED_COLOR_ID_GREEN>;
-			function = "dsl";
+			function = LED_FUNCTION_WPS;
 			gpios = <&gpio0 5 GPIO_ACTIVE_LOW>;
 			default-state = "off";
 		};
@@ -102,7 +105,7 @@
 			default-state = "off";
 		};
 
-		led_phone_amber: led-12 {
+		led_phone_amber: led-13 {
 			color = <LED_COLOR_ID_AMBER>;
 			function = "phone";
 			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
@@ -113,13 +116,6 @@
 			color = <LED_COLOR_ID_GREEN>;
 			function = LED_FUNCTION_LAN;
 			gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
-			default-state = "off";
-		};
-
-		led_wan_eth: led-8 {
-			color = <LED_COLOR_ID_GREEN>;
-			function = LED_FUNCTION_WAN;
-			gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
 			default-state = "off";
 		};
 	};
