@@ -151,7 +151,7 @@
 &nand {
 	status = "okay";
 	econet,bmt;
-	econet,bbt-table-size = <1000>;
+	econet,bbt-table-size = <250>;
 	econet,assert-reserve-size = <167>;
 
 	partitions {
